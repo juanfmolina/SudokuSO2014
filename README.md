@@ -1,4 +1,4 @@
-SudokuSO2014
+TrabajoFinalSO2014
 ============
 
-Adaptación del juego sudoku encontrado en github.com/romario333/opensudoku para conectarse con un servidor en linea
+Adaptación del juego sudoku encontrado  para conectarse con un servidor en linea
