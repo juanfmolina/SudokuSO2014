@@ -7,7 +7,9 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -24,17 +26,19 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.EditText;
 import android.content.Intent;
 
 
 public class MainActivity extends Activity {
 	
 	int scoreJuego=0;
-
-
+	String nombreJugador=null;
+	Puntuacion puntaje=null;
+	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+
 		//for no title
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -85,7 +89,9 @@ public class MainActivity extends Activity {
 				@Override
                 public void surfaceCreated(SurfaceHolder holder) 
                 {
-                	  gameLoopThread.setRunning(true);
+                	  
+                	
+                	gameLoopThread.setRunning(true);
                 	  gameLoopThread.start();
                 	  
 	             }
@@ -347,27 +353,14 @@ public class MainActivity extends Activity {
 	}
 
 	public void crearIntent(){
-		Intent intent =  new Intent(this, ScoresActivity.class);
+		
+		Intent intent =  new Intent(this, TransferActivity.class);
     	intent.putExtra("scoreJuego",scoreJuego);
 		startActivity(intent);
     	
 		
 	}
 	
-	
-/*	 public class StartProcess extends AsyncTask<Main, Void, Main> {  
-	      @Override
-	        protected Main doInBackground(Main... params) { 
-	             return params[0]; 
-	       }
-	     protected void onPostExecute(Main params) { 
-	    // TODO Auto-generated method stub
-	        System.out.println("post"); 
-	         Intent loc = new Intent(params,ScoresActivity.class); 
-	          loc.putExtra("locationType",0); 
-	          loc.putExtra("startEndType",0); 
-	          startActivity(loc);
-	    }
-	    }*/
+
 
 }

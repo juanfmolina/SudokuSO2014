@@ -52,7 +52,8 @@ public class ScoresActivity extends Activity {
 	protected void onStart() {
 		super.onStart();
 		obtenerComponentes();
-		obtenerDatos();
+		obtenerPuntaje();
+
 		
 		cargarLista();
 	}
@@ -75,44 +76,27 @@ public void obtenerPuntaje(){
 		
 		if(intent.getExtras()!=null){
 			
-		scoreJuego = intent.getIntExtra("scoreJuego", 0);	
-		Toast.makeText(getApplicationContext(),
-				"Jugador: "+ nombreJugador + "Puntaje: " + scoreJuego,
-				Toast.LENGTH_SHORT).show();	
+		Puntuacion puntuacion = (Puntuacion) intent.getSerializableExtra("nuevoPuntaje");
+		puntuaciones.add(puntuacion);
 		}else{
 			
 		}
 	}
 
-	public void obtenerDatos(){
-		AlertDialog.Builder alert = new AlertDialog.Builder(this);
 
-		alert.setTitle("Title");
-		alert.setMessage("Message");
-
-		// Set an EditText view to get user input 
-		final EditText input = new EditText(this);
-		alert.setView(input);
-
-		alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-		public void onClick(DialogInterface dialog, int whichButton) {
-		  nombreJugador = input.getText().toString();
-		  obtenerPuntaje();
-		  // Do something with value!
-		 puntuaciones.add(new Puntuacion(nombreJugador,String.valueOf(scoreJuego)));
-		  }
-		});
-
-		alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-		  public void onClick(DialogInterface dialog, int whichButton) {
-		    // Canceled.
-		  }
-		});
-
-		alert.show();
-		// see http://androidsnippets.com/prompt-user-input-with-an-alertdialog
-		
-		
-	}
+/*	 public class StartProcess extends AsyncTask<Main, Void, Main> {  
+      @Override
+        protected Main doInBackground(Main... params) { 
+             return params[0]; 
+       }
+     protected void onPostExecute(Main params) { 
+    // TODO Auto-generated method stub
+        System.out.println("post"); 
+         Intent loc = new Intent(params,ScoresActivity.class); 
+          loc.putExtra("locationType",0); 
+          loc.putExtra("startEndType",0); 
+          startActivity(loc);
+    }
+    }*/
 	
 }
