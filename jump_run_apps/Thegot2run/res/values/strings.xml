@@ -4,5 +4,9 @@
     <string name="app_name">Thegot2run</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_scores">ScoresActivity</string>
+    <string name="scoreString">Tabla de mayores puntajes</string>
+    <string name="scoreView">Ver Puntuaciones</string>
+    <string name="play_again">Jugar Otra Vez</string>
 
 </resources>

@@ -15,12 +15,18 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.thelikes.thegot2run.MainActivity"
-            android:label="@string/app_name" android:screenOrientation="landscape">
+            android:label="@string/app_name"
+            android:screenOrientation="landscape" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.thelikes.thegot2run.ScoresActivity"
+            android:label="@string/title_activity_scores" >
+            
         </activity>
     </application>
 
