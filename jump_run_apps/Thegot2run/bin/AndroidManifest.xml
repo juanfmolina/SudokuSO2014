@@ -26,7 +26,10 @@
         <activity
             android:name="com.thelikes.thegot2run.ScoresActivity"
             android:label="@string/title_activity_scores" >
-            
+        </activity>
+        <activity
+            android:name="com.thelikes.thegot2run.TransferActivity"
+            android:label="@string/title_activity_transfer" >
         </activity>
     </application>
 

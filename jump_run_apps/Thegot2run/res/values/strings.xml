@@ -8,5 +8,8 @@
     <string name="scoreString">Tabla de mayores puntajes</string>
     <string name="scoreView">Ver Puntuaciones</string>
     <string name="play_again">Jugar Otra Vez</string>
+    <string name="title_activity_transfer">TransferActivity</string>
+    <string name="agregar_nombre">Introduzca su nombre:</string>
+    <string name="boton_aceptar">Aceptar</string>
 
 </resources>
