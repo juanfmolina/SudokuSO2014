@@ -18,6 +18,8 @@ public class Adapter_Score extends ArrayAdapter<Puntuacion>{
 	List<Puntuacion> puntuaciones;
 	TextView textViewNombre;
 	TextView textViewScore;
+	TextView textViewFecha;
+	
 	LinearLayout layout;
 
 	public Adapter_Score(Context context, int layoutResourceId, List<Puntuacion> objects) {
@@ -36,9 +38,12 @@ public class Adapter_Score extends ArrayAdapter<Puntuacion>{
 
 		textViewNombre = (TextView) rowView.findViewById(R.id.elemento_nombre);
 		textViewScore = (TextView) rowView.findViewById(R.id.elemento_score);
+		textViewFecha = (TextView) rowView.findViewById(R.id.elemento_fecha);
 
 		textViewNombre.setText(puntuaciones.get(position).getNombre());
-		textViewScore.setText(puntuaciones.get(position).getScore());
+		textViewScore.setText(String.valueOf(puntuaciones.get(position).getScore()));
+		textViewFecha.setText(puntuaciones.get(position).getFecha());
+		
 
 		return rowView;
 	}

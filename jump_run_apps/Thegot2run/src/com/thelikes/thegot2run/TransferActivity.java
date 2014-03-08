@@ -12,6 +12,7 @@ public class TransferActivity extends Activity {
 
 	int scoreJuego;
 	EditText campoNombre;
+	String fecha;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +43,7 @@ public class TransferActivity extends Activity {
 	
 
 		public void onClick(View view){
-			Puntuacion puntaje = new Puntuacion(campoNombre.getText().toString(),String.valueOf(scoreJuego));
+			Puntuacion puntaje = new Puntuacion(campoNombre.getText().toString(),scoreJuego,fecha);
 			Intent intent =  new Intent(this, ScoresActivity.class);
 			intent.putExtra("nuevoPuntaje", puntaje);
 			startActivity(intent);
@@ -55,7 +56,7 @@ public class TransferActivity extends Activity {
 			Intent intent = getIntent();
 			
 			if(intent.getExtras()!=null){
-				
+				fecha = intent.getStringExtra("fechaJuego");
 				scoreJuego = intent.getIntExtra("scoreJuego", 0);
 				
 			}else{

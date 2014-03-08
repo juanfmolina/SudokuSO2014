@@ -9,12 +9,16 @@ public class Puntuacion implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	private String nombre;
-	private String score;
+	private int score;
+	private String fecha;
 	
-	public Puntuacion(String nombre, String score) {
+	
+
+	public Puntuacion(String nombre, int score, String fecha) {
 		super();
 		this.nombre = nombre;
 		this.score = score;
+		this.fecha = fecha;
 	}
 
 	public String getNombre() {
@@ -25,13 +29,23 @@ public class Puntuacion implements Serializable {
 		this.nombre = nombre;
 	}
 
-	public String getScore() {
+	public int getScore() {
 		return score;
 	}
 
-	public void setScore(String score) {
+	public void setScore(int score) {
 		this.score = score;
 	}
+
+	public String getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(String fecha) {
+		this.fecha = fecha;
+	}
+
+
 	
 	
 

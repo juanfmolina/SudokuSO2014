@@ -3,6 +3,9 @@ package com.thelikes.thegot2run;
 
 
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.annotation.SuppressLint;
@@ -18,6 +21,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.Paint.Align;
+import android.text.format.DateFormat;
 import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -353,8 +357,12 @@ public class MainActivity extends Activity {
 	}
 
 	public void crearIntent(){
+		Date date = new Date();
+		SimpleDateFormat formato = new SimpleDateFormat("yyyy/MM/dd");
+		String fecha = formato.format(date);
 		
 		Intent intent =  new Intent(this, TransferActivity.class);
+		intent.putExtra("fechaJuego", fecha);
     	intent.putExtra("scoreJuego",scoreJuego);
 		startActivity(intent);
     	
