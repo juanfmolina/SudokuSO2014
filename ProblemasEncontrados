@@ -1,0 +1,5 @@
+Aquí se ponen los problemas encontrados durante el desarrollo de la aplicación:
+
+Para conectarnos con el servidor, tuvimos muchos inconvenientes, ya que hicimos muchos intentos por varios medios: sockets, servicios web SOAP, servicios web REST.
+
+Para solucionar este problema, encontramos un servidor web que aloja objetos, este servidor se encuentra en www.parse.com y su uso es muy eficiente.
